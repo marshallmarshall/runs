@@ -44,7 +44,7 @@ class MonthlyMileagesController < ApplicationController
 
     @monthly_mileage.month_starting = params.fetch("month_starting")
     @monthly_mileage.monthly_mileage = params.fetch("monthly_mileage")
-    @monthly_mileage.user_id = params.fetch("user_id")
+    
 
     if @monthly_mileage.valid?
       @monthly_mileage.save
