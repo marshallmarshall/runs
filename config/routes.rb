@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Monthly mileage resource:
+
+  # CREATE
+  get("/monthly_mileages/new", { :controller => "monthly_mileages", :action => "new_form" })
+  post("/create_monthly_mileage", { :controller => "monthly_mileages", :action => "create_row" })
+
+  # READ
+  get("/monthly_mileages", { :controller => "monthly_mileages", :action => "index" })
+  get("/monthly_mileages/:id_to_display", { :controller => "monthly_mileages", :action => "show" })
+
+  # UPDATE
+  get("/monthly_mileages/:prefill_with_id/edit", { :controller => "monthly_mileages", :action => "edit_form" })
+  post("/update_monthly_mileage/:id_to_modify", { :controller => "monthly_mileages", :action => "update_row" })
+
+  # DELETE
+  get("/delete_monthly_mileage/:id_to_remove", { :controller => "monthly_mileages", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Weekly mileage resource:
 
   # CREATE

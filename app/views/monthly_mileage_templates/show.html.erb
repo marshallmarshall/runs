@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Monthly mileage #<%= @monthly_mileage.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/monthly_mileages" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link monthly_mileage start -->
+      <div class="col">
+        <a href="/monthly_mileages/<%= @monthly_mileage.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit monthly mileage
+        </a>
+      </div>
+      <!-- Edit link monthly_mileage end -->
+
+      <!-- Delete link monthly_mileage start -->
+      <div class="col">
+        <a href="/delete_monthly_mileage/<%= @monthly_mileage.id %>" class="btn btn-block btn-outline-secondary">
+          Delete monthly mileage
+        </a>
+      </div>
+      <!-- Delete link monthly_mileage end -->
+    </div>
+
+    <dl>
+      <dt>
+        Month starting
+      </dt>
+      <!-- Display month_starting start -->
+      <dd>
+        <%= @monthly_mileage.month_starting %>
+      </dd>
+      <!-- Display month_starting end -->
+
+      <dt>
+        Monthly mileage
+      </dt>
+      <!-- Display monthly_mileage start -->
+      <dd>
+        <%= @monthly_mileage.monthly_mileage %>
+      </dd>
+      <!-- Display monthly_mileage end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @monthly_mileage.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@monthly_mileage.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@monthly_mileage.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
