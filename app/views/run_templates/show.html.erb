@@ -13,17 +13,21 @@
 
       <!-- Edit link run start -->
       <div class="col">
-        <a href="/runs/<%= @run.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit run
-        </a>
+        <% if current_user == @run.user %>
+          <a href="/runs/<%= @run.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit run
+          </a>
+        <% end %>
       </div>
       <!-- Edit link run end -->
 
       <!-- Delete link run start -->
       <div class="col">
-        <a href="/delete_run/<%= @run.id %>" class="btn btn-block btn-outline-secondary">
-          Delete run
-        </a>
+        <% if current_user == @run.user %>
+          <a href="/delete_run/<%= @run.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete run
+          </a>
+        <% end %>
       </div>
       <!-- Delete link run end -->
     </div>
