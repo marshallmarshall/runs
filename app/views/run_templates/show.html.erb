@@ -1,0 +1,163 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Run #<%= @run.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/runs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link run start -->
+      <div class="col">
+        <a href="/runs/<%= @run.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit run
+        </a>
+      </div>
+      <!-- Edit link run end -->
+
+      <!-- Delete link run start -->
+      <div class="col">
+        <a href="/delete_run/<%= @run.id %>" class="btn btn-block btn-outline-secondary">
+          Delete run
+        </a>
+      </div>
+      <!-- Delete link run end -->
+    </div>
+
+    <dl>
+      <dt>
+        Date of run
+      </dt>
+      <!-- Display date_of_run start -->
+      <dd>
+        <%= @run.date_of_run %>
+      </dd>
+      <!-- Display date_of_run end -->
+
+      <dt>
+        Training week
+      </dt>
+      <!-- Display training_week start -->
+      <dd>
+        <%= @run.training_week %>
+      </dd>
+      <!-- Display training_week end -->
+
+      <dt>
+        Miles planned
+      </dt>
+      <!-- Display miles_planned start -->
+      <dd>
+        <%= @run.miles_planned %>
+      </dd>
+      <!-- Display miles_planned end -->
+
+      <dt>
+        Miles actual
+      </dt>
+      <!-- Display miles_actual start -->
+      <dd>
+        <%= @run.miles_actual %>
+      </dd>
+      <!-- Display miles_actual end -->
+
+      <dt>
+        Treadmill incline
+      </dt>
+      <!-- Display treadmill_incline start -->
+      <dd>
+        <%= @run.treadmill_incline %>
+      </dd>
+      <!-- Display treadmill_incline end -->
+
+      <dt>
+        Run duration minutes
+      </dt>
+      <!-- Display run_duration_minutes start -->
+      <dd>
+        <%= @run.run_duration_minutes %>
+      </dd>
+      <!-- Display run_duration_minutes end -->
+
+      <dt>
+        Run duration seconds
+      </dt>
+      <!-- Display run_duration_seconds start -->
+      <dd>
+        <%= @run.run_duration_seconds %>
+      </dd>
+      <!-- Display run_duration_seconds end -->
+
+      <dt>
+        Actual pace
+      </dt>
+      <!-- Display actual_pace start -->
+      <dd>
+        <%= @run.actual_pace %>
+      </dd>
+      <!-- Display actual_pace end -->
+
+      <dt>
+        Location
+      </dt>
+      <!-- Display location_id start -->
+      <dd>
+        <%= @run.location_id %>
+      </dd>
+      <!-- Display location_id end -->
+
+      <dt>
+        Notes
+      </dt>
+      <!-- Display notes start -->
+      <dd>
+        <%= @run.notes %>
+      </dd>
+      <!-- Display notes end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @run.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Shoe
+      </dt>
+      <!-- Display shoe_id start -->
+      <dd>
+        <%= @run.shoe_id %>
+      </dd>
+      <!-- Display shoe_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@run.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@run.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
