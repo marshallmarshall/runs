@@ -1,4 +1,14 @@
 class MonthlyMileagesController < ApplicationController
+  before_action :current_user_must_be_monthly_mileage_user, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_monthly_mileage_user
+    monthly_mileage = MonthlyMileage.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == monthly_mileage.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @monthly_mileages = MonthlyMileage.all
 

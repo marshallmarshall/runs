@@ -13,17 +13,21 @@
 
       <!-- Edit link monthly_mileage start -->
       <div class="col">
-        <a href="/monthly_mileages/<%= @monthly_mileage.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit monthly mileage
-        </a>
+        <% if current_user == @monthly_mileage.user %>
+          <a href="/monthly_mileages/<%= @monthly_mileage.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit monthly_mileage
+          </a>
+        <% end %>
       </div>
       <!-- Edit link monthly_mileage end -->
 
       <!-- Delete link monthly_mileage start -->
       <div class="col">
-        <a href="/delete_monthly_mileage/<%= @monthly_mileage.id %>" class="btn btn-block btn-outline-secondary">
-          Delete monthly mileage
-        </a>
+        <% if current_user == @monthly_mileage.user %>
+          <a href="/delete_monthly_mileage/<%= @monthly_mileage.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete monthly_mileage
+          </a>
+        <% end %>
       </div>
       <!-- Delete link monthly_mileage end -->
     </div>
