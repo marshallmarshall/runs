@@ -86,7 +86,7 @@ class RunsController < ApplicationController
     @run.actual_pace = params.fetch("actual_pace")
     @run.location_id = params.fetch("location_id")
     @run.notes = params.fetch("notes")
-    @run.user_id = params.fetch("user_id")
+    
     @run.shoe_id = params.fetch("shoe_id")
 
     if @run.valid?
