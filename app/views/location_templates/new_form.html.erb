@@ -1,0 +1,45 @@
+<h1>
+  Add a new location
+</h1>
+
+
+<hr>
+
+<!-- Form location start -->
+<form action="/create_location" method="post">
+<!-- Form location end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create location
+  </button>
+</form>
+
+<hr>
+
+<a href="/locations">
+  Go back
+</a>
