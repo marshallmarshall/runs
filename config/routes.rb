@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "runs#index"
   # Routes for the Monthly mileage resource:
 
   # CREATE
