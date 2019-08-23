@@ -1,0 +1,145 @@
+<!-- Form run start -->
+<form action="/create_run_from_shoe" method="post">
+<!-- Form run end -->
+
+  <!-- Label and input for date_of_run start -->
+  <div class="form-group">
+    <label for="date_of_run">
+      Date of run
+    </label>
+
+    <!-- Input for date_of_run start -->
+    <input type="text" id="date_of_run" name="date_of_run" class="form-control" value="<%= @run.date_of_run %>">
+    <!-- Input for date_of_run end -->
+  </div>
+  <!-- Label and input for date_of_run end -->
+
+  <!-- Label and input for training_week start -->
+  <div class="form-group">
+    <label for="training_week">
+      Training week
+    </label>
+
+    <!-- Input for training_week start -->
+    <input type="text" id="training_week" name="training_week" class="form-control" value="<%= @run.training_week %>">
+    <!-- Input for training_week end -->
+  </div>
+  <!-- Label and input for training_week end -->
+
+  <!-- Label and input for miles_planned start -->
+  <div class="form-group">
+    <label for="miles_planned">
+      Miles planned
+    </label>
+
+    <!-- Input for miles_planned start -->
+    <input type="text" id="miles_planned" name="miles_planned" class="form-control" value="<%= @run.miles_planned %>">
+    <!-- Input for miles_planned end -->
+  </div>
+  <!-- Label and input for miles_planned end -->
+
+  <!-- Label and input for miles_actual start -->
+  <div class="form-group">
+    <label for="miles_actual">
+      Miles actual
+    </label>
+
+    <!-- Input for miles_actual start -->
+    <input type="text" id="miles_actual" name="miles_actual" class="form-control" value="<%= @run.miles_actual %>">
+    <!-- Input for miles_actual end -->
+  </div>
+  <!-- Label and input for miles_actual end -->
+
+  <!-- Label and input for treadmill_incline start -->
+  <div class="form-group">
+    <label for="treadmill_incline">
+      Treadmill incline
+    </label>
+
+    <!-- Input for treadmill_incline start -->
+    <input type="text" id="treadmill_incline" name="treadmill_incline" class="form-control" value="<%= @run.treadmill_incline %>">
+    <!-- Input for treadmill_incline end -->
+  </div>
+  <!-- Label and input for treadmill_incline end -->
+
+  <!-- Label and input for run_duration_minutes start -->
+  <div class="form-group">
+    <label for="run_duration_minutes">
+      Run duration minutes
+    </label>
+
+    <!-- Input for run_duration_minutes start -->
+    <input type="text" id="run_duration_minutes" name="run_duration_minutes" class="form-control" value="<%= @run.run_duration_minutes %>">
+    <!-- Input for run_duration_minutes end -->
+  </div>
+  <!-- Label and input for run_duration_minutes end -->
+
+  <!-- Label and input for run_duration_seconds start -->
+  <div class="form-group">
+    <label for="run_duration_seconds">
+      Run duration seconds
+    </label>
+
+    <!-- Input for run_duration_seconds start -->
+    <input type="text" id="run_duration_seconds" name="run_duration_seconds" class="form-control" value="<%= @run.run_duration_seconds %>">
+    <!-- Input for run_duration_seconds end -->
+  </div>
+  <!-- Label and input for run_duration_seconds end -->
+
+  <!-- Label and input for actual_pace start -->
+  <div class="form-group">
+    <label for="actual_pace">
+      Actual pace
+    </label>
+
+    <!-- Input for actual_pace start -->
+    <input type="text" id="actual_pace" name="actual_pace" class="form-control" value="<%= @run.actual_pace %>">
+    <!-- Input for actual_pace end -->
+  </div>
+  <!-- Label and input for actual_pace end -->
+
+  <!-- Label and input for location_id start -->
+  <div class="form-group">
+    <label for="location_id">
+      Location
+    </label>
+
+    <!-- Input for location_id start -->
+    <input type="text" id="location_id" name="location_id" class="form-control" value="<%= @run.location_id %>">
+    <!-- Input for location_id end -->
+  </div>
+  <!-- Label and input for location_id end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <input type="text" id="notes" name="notes" class="form-control" value="<%= @run.notes %>">
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @run.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for shoe_id start -->
+  <!-- Input for shoe_id start -->
+  <input type="hidden" name="shoe_id" value="<%= @shoe.id %>">
+  <!-- Input for shoe_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create run
+  </button>
+</form>

@@ -96,6 +96,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/runs/new", { :controller => "runs", :action => "new_form" })
   post("/create_run", { :controller => "runs", :action => "create_row" })
+  post("/create_run_from_shoe", { :controller => "runs", :action => "create_row_from_shoe" })
 
   # READ
   get("/runs", { :controller => "runs", :action => "index" })

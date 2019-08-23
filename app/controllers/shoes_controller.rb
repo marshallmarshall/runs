@@ -6,6 +6,7 @@ class ShoesController < ApplicationController
   end
 
   def show
+    @run = Run.new
     @shoe = Shoe.find(params.fetch("id_to_display"))
 
     render("shoe_templates/show.html.erb")
