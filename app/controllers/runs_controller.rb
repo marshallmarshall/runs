@@ -73,6 +73,22 @@ class RunsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @run = Run.find(params.fetch("id_to_remove"))
+
+    @run.destroy
+
+    redirect_to("/users/#{@run.user_id}", notice: "Run deleted successfully.")
+  end
+
+  def destroy_row_from_shoe
+    @run = Run.find(params.fetch("id_to_remove"))
+
+    @run.destroy
+
+    redirect_to("/shoes/#{@run.shoe_id}", notice: "Run deleted successfully.")
+  end
+
   def destroy_row
     @run = Run.find(params.fetch("id_to_remove"))
 

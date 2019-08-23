@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_monthly_mileage/:id_to_remove", { :controller => "monthly_mileages", :action => "destroy_row" })
+  get("/delete_monthly_mileage_from_user/:id_to_remove", { :controller => "monthly_mileages", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_weekly_mileage/:id_to_remove", { :controller => "weekly_mileages", :action => "destroy_row" })
+  get("/delete_weekly_mileage_from_user/:id_to_remove", { :controller => "weekly_mileages", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +58,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_shoe/:id_to_remove", { :controller => "shoes", :action => "destroy_row" })
+  get("/delete_shoe_from_user/:id_to_remove", { :controller => "shoes", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -84,6 +87,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_location/:id_to_remove", { :controller => "locations", :action => "destroy_row" })
+  get("/delete_location_from_user/:id_to_remove", { :controller => "locations", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -103,6 +107,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_run/:id_to_remove", { :controller => "runs", :action => "destroy_row" })
+  get("/delete_run_from_shoe/:id_to_remove", { :controller => "runs", :action => "destroy_row_from_shoe" })
+  get("/delete_run_from_user/:id_to_remove", { :controller => "runs", :action => "destroy_row_from_user" })
 
   #------------------------------
 

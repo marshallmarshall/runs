@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Monthly Mileages
+
+    <a data-toggle="collapse" href="#user_monthly_mileages_new_form">
+      Add monthly mileage
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.monthly_mileages.each do |monthly_mileage| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/monthly_mileages/<%= monthly_mileage.id %>">
+          <%= monthly_mileage.month_starting %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

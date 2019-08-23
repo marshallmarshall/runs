@@ -53,6 +53,14 @@ class ShoesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @shoe = Shoe.find(params.fetch("id_to_remove"))
+
+    @shoe.destroy
+
+    redirect_to("/users/#{@shoe.user_id}", notice: "Shoe deleted successfully.")
+  end
+
   def destroy_row
     @shoe = Shoe.find(params.fetch("id_to_remove"))
 

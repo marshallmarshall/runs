@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Shoes
+
+    <a data-toggle="collapse" href="#user_shoes_new_form">
+      Add shoe
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.shoes.each do |shoe| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/shoes/<%= shoe.id %>">
+          <%= shoe.shoe_name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

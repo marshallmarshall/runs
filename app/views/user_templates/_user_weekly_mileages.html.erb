@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Weekly Mileages
+
+    <a data-toggle="collapse" href="#user_weekly_mileages_new_form">
+      Add weekly mileage
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.weekly_mileages.each do |weekly_mileage| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/weekly_mileages/<%= weekly_mileage.id %>">
+          <%= weekly_mileage.week_starting %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -55,6 +55,14 @@ class MonthlyMileagesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @monthly_mileage = MonthlyMileage.find(params.fetch("id_to_remove"))
+
+    @monthly_mileage.destroy
+
+    redirect_to("/users/#{@monthly_mileage.user_id}", notice: "MonthlyMileage deleted successfully.")
+  end
+
   def destroy_row
     @monthly_mileage = MonthlyMileage.find(params.fetch("id_to_remove"))
 

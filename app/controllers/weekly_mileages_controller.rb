@@ -55,6 +55,14 @@ class WeeklyMileagesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @weekly_mileage = WeeklyMileage.find(params.fetch("id_to_remove"))
+
+    @weekly_mileage.destroy
+
+    redirect_to("/users/#{@weekly_mileage.user_id}", notice: "WeeklyMileage deleted successfully.")
+  end
+
   def destroy_row
     @weekly_mileage = WeeklyMileage.find(params.fetch("id_to_remove"))
 
