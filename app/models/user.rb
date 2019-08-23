@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :shoes,
+             :dependent => :destroy
+
   has_many   :monthly_mileages,
              :dependent => :destroy
 

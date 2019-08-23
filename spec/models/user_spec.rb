@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:shoes) }
+
     it { should have_many(:monthly_mileages) }
 
     it { should have_many(:weekly_mileages) }
