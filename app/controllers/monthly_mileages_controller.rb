@@ -1,5 +1,5 @@
 class MonthlyMileagesController < ApplicationController
-  before_action :current_user_must_be_monthly_mileage_user, :only => [:edit_form, :update_row, :destroy_row]
+  before_action :current_user_must_be_monthly_mileage_user, :only => [:show, :edit_form, :update_row, :destroy_row]
 
   def current_user_must_be_monthly_mileage_user
     monthly_mileage = MonthlyMileage.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
