@@ -10,7 +10,7 @@ class RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.all
+    @runs = current_user.runs.page(params[:page]).per(10)
 
     render("run_templates/index.html.erb")
   end
