@@ -156,7 +156,7 @@
     </label>
 
     <!-- Input for shoe_id start -->
-    <input type="text" id="shoe_id" name="shoe_id" class="form-control" value="<%= @run.shoe_id %>">
+    <%= select_tag(:shoe_id, options_from_collection_for_select(Shoe.all, :id, :shoe_name, @run.shoe_id), :class => "form-control") %>
     <!-- Input for shoe_id end -->
   </div>
   <!-- Label and input for shoe_id end -->
