@@ -10,7 +10,7 @@ class MonthlyMileagesController < ApplicationController
   end
 
   def index
-    @monthly_mileages = MonthlyMileage.all
+    @monthly_mileages = current_user.monthly_mileages.page(params[:page]).per(10)
 
     render("monthly_mileage_templates/index.html.erb")
   end
