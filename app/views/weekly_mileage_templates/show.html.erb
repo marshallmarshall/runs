@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Weekly mileage #<%= @weekly_mileage.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/weekly_mileages" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link weekly_mileage start -->
+      <div class="col">
+        <a href="/weekly_mileages/<%= @weekly_mileage.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit weekly mileage
+        </a>
+      </div>
+      <!-- Edit link weekly_mileage end -->
+
+      <!-- Delete link weekly_mileage start -->
+      <div class="col">
+        <a href="/delete_weekly_mileage/<%= @weekly_mileage.id %>" class="btn btn-block btn-outline-secondary">
+          Delete weekly mileage
+        </a>
+      </div>
+      <!-- Delete link weekly_mileage end -->
+    </div>
+
+    <dl>
+      <dt>
+        Week starting
+      </dt>
+      <!-- Display week_starting start -->
+      <dd>
+        <%= @weekly_mileage.week_starting %>
+      </dd>
+      <!-- Display week_starting end -->
+
+      <dt>
+        Weekly mileage
+      </dt>
+      <!-- Display weekly_mileage start -->
+      <dd>
+        <%= @weekly_mileage.weekly_mileage %>
+      </dd>
+      <!-- Display weekly_mileage end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @weekly_mileage.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@weekly_mileage.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@weekly_mileage.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

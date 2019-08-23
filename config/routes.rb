@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Weekly mileage resource:
+
+  # CREATE
+  get("/weekly_mileages/new", { :controller => "weekly_mileages", :action => "new_form" })
+  post("/create_weekly_mileage", { :controller => "weekly_mileages", :action => "create_row" })
+
+  # READ
+  get("/weekly_mileages", { :controller => "weekly_mileages", :action => "index" })
+  get("/weekly_mileages/:id_to_display", { :controller => "weekly_mileages", :action => "show" })
+
+  # UPDATE
+  get("/weekly_mileages/:prefill_with_id/edit", { :controller => "weekly_mileages", :action => "edit_form" })
+  post("/update_weekly_mileage/:id_to_modify", { :controller => "weekly_mileages", :action => "update_row" })
+
+  # DELETE
+  get("/delete_weekly_mileage/:id_to_remove", { :controller => "weekly_mileages", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Shoe resource:
 
   # CREATE

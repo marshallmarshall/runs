@@ -1,0 +1,56 @@
+<h1>
+  Edit weekly mileage #<%= @weekly_mileage.id %>
+</h1>
+
+<hr>
+
+<!-- Form weekly_mileage start -->
+<form action="/update_weekly_mileage/<%= @weekly_mileage.id %>" method="post">
+<!-- Form weekly_mileage end -->
+
+  <!-- Label and input for week_starting start -->
+  <div class="form-group">
+    <label for="week_starting">
+      Week starting
+    </label>
+
+    <!-- Input for week_starting start -->
+    <input type="text" id="week_starting" name="week_starting" class="form-control" value="<%= @weekly_mileage.week_starting %>">
+    <!-- Input for week_starting end -->
+  </div>
+  <!-- Label and input for week_starting end -->
+
+  <!-- Label and input for weekly_mileage start -->
+  <div class="form-group">
+    <label for="weekly_mileage">
+      Weekly mileage
+    </label>
+
+    <!-- Input for weekly_mileage start -->
+    <input type="text" id="weekly_mileage" name="weekly_mileage" class="form-control" value="<%= @weekly_mileage.weekly_mileage %>">
+    <!-- Input for weekly_mileage end -->
+  </div>
+  <!-- Label and input for weekly_mileage end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @weekly_mileage.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update weekly mileage
+  </button>
+</form>
+
+<hr>
+
+<a href="/weekly_mileages">
+  Go back
+</a>
