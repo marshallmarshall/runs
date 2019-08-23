@@ -43,7 +43,7 @@ class ShoesController < ApplicationController
     @shoe = Shoe.find(params.fetch("id_to_modify"))
 
     @shoe.shoe_name = params.fetch("shoe_name")
-    @shoe.user_id = params.fetch("user_id")
+    
 
     if @shoe.valid?
       @shoe.save
