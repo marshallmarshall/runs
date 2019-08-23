@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :weekly_mileages,
+             :dependent => :destroy
+
   has_many   :locations,
              :dependent => :destroy
 
