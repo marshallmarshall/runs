@@ -4,6 +4,8 @@ RSpec.describe Shoe, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:runs) }
+
     it { should belong_to(:user) }
 
     end
