@@ -1,4 +1,6 @@
 ActiveAdmin.register WeeklyMileage do
+
+ permit_params :week_starting, :weekly_mileage, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
