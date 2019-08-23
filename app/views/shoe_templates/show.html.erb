@@ -13,17 +13,21 @@
 
       <!-- Edit link shoe start -->
       <div class="col">
-        <a href="/shoes/<%= @shoe.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit shoe
-        </a>
+        <% if current_user == @shoe.user %>
+          <a href="/shoes/<%= @shoe.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit shoe
+          </a>
+        <% end %>
       </div>
       <!-- Edit link shoe end -->
 
       <!-- Delete link shoe start -->
       <div class="col">
-        <a href="/delete_shoe/<%= @shoe.id %>" class="btn btn-block btn-outline-secondary">
-          Delete shoe
-        </a>
+        <% if current_user == @shoe.user %>
+          <a href="/delete_shoe/<%= @shoe.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete shoe
+          </a>
+        <% end %>
       </div>
       <!-- Delete link shoe end -->
     </div>
