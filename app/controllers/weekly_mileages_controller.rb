@@ -10,7 +10,7 @@ class WeeklyMileagesController < ApplicationController
   end
 
   def index
-    @weekly_mileages = WeeklyMileage.all
+    @weekly_mileages = current_user.weekly_mileages.page(params[:page]).per(10)
 
     render("weekly_mileage_templates/index.html.erb")
   end
