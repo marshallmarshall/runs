@@ -158,13 +158,21 @@
 
         <!-- Display run.user_id start -->
         <td>
-          <%= run.user.email %>
+          <% if run.user.present? %>
+            <a href="/users/<%= run.user.id %>">
+              <%= run.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display run.user_id end -->
 
         <!-- Display run.shoe_id start -->
         <td>
-          <%= run.shoe.shoe_name %>
+          <% if run.shoe.present? %>
+            <a href="/shoes/<%= run.shoe.id %>">
+              <%= run.shoe.shoe_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display run.shoe_id end -->
 

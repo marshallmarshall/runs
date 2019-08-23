@@ -64,7 +64,11 @@
 
         <!-- Display location.user_id start -->
         <td>
-          <%= location.user.email %>
+          <% if location.user.present? %>
+            <a href="/users/<%= location.user.id %>">
+              <%= location.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display location.user_id end -->
 

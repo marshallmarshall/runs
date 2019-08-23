@@ -64,7 +64,11 @@
 
         <!-- Display shoe.user_id start -->
         <td>
-          <%= shoe.user.email %>
+          <% if shoe.user.present? %>
+            <a href="/users/<%= shoe.user.id %>">
+              <%= shoe.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display shoe.user_id end -->
 

@@ -128,7 +128,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @run.user_id %>
+        <% if @run.user.present? %>
+          <a href="/users/<%= @run.user_id %>">
+            <%= @run.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -137,7 +141,11 @@
       </dt>
       <!-- Display shoe_id start -->
       <dd>
-        <%= @run.shoe_id %>
+        <% if @run.shoe.present? %>
+          <a href="/shoes/<%= @run.shoe_id %>">
+            <%= @run.shoe.shoe_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display shoe_id end -->
 

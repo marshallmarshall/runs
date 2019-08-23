@@ -56,7 +56,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @monthly_mileage.user_id %>
+        <% if @monthly_mileage.user.present? %>
+          <a href="/users/<%= @monthly_mileage.user_id %>">
+            <%= @monthly_mileage.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

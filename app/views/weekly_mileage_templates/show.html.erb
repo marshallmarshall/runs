@@ -56,7 +56,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @weekly_mileage.user_id %>
+        <% if @weekly_mileage.user.present? %>
+          <a href="/users/<%= @weekly_mileage.user_id %>">
+            <%= @weekly_mileage.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

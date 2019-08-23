@@ -74,7 +74,11 @@
 
         <!-- Display monthly_mileage.user_id start -->
         <td>
-          <%= monthly_mileage.user.email %>
+          <% if monthly_mileage.user.present? %>
+            <a href="/users/<%= monthly_mileage.user.id %>">
+              <%= monthly_mileage.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display monthly_mileage.user_id end -->
 
