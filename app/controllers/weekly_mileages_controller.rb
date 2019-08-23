@@ -44,7 +44,7 @@ class WeeklyMileagesController < ApplicationController
 
     @weekly_mileage.week_starting = params.fetch("week_starting")
     @weekly_mileage.weekly_mileage = params.fetch("weekly_mileage")
-    @weekly_mileage.user_id = params.fetch("user_id")
+    
 
     if @weekly_mileage.valid?
       @weekly_mileage.save
