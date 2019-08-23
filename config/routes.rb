@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Shoe resource:
+
+  # CREATE
+  get("/shoes/new", { :controller => "shoes", :action => "new_form" })
+  post("/create_shoe", { :controller => "shoes", :action => "create_row" })
+
+  # READ
+  get("/shoes", { :controller => "shoes", :action => "index" })
+  get("/shoes/:id_to_display", { :controller => "shoes", :action => "show" })
+
+  # UPDATE
+  get("/shoes/:prefill_with_id/edit", { :controller => "shoes", :action => "edit_form" })
+  post("/update_shoe/:id_to_modify", { :controller => "shoes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_shoe/:id_to_remove", { :controller => "shoes", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

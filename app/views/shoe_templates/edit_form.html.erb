@@ -1,0 +1,44 @@
+<h1>
+  Edit shoe #<%= @shoe.id %>
+</h1>
+
+<hr>
+
+<!-- Form shoe start -->
+<form action="/update_shoe/<%= @shoe.id %>" method="post">
+<!-- Form shoe end -->
+
+  <!-- Label and input for shoe_name start -->
+  <div class="form-group">
+    <label for="shoe_name">
+      Shoe name
+    </label>
+
+    <!-- Input for shoe_name start -->
+    <input type="text" id="shoe_name" name="shoe_name" class="form-control" value="<%= @shoe.shoe_name %>">
+    <!-- Input for shoe_name end -->
+  </div>
+  <!-- Label and input for shoe_name end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @shoe.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update shoe
+  </button>
+</form>
+
+<hr>
+
+<a href="/shoes">
+  Go back
+</a>
