@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form monthly_mileage start -->
 <form action="/create_monthly_mileage" method="post">
-<!-- Form monthly_mileage end -->
 
-  <!-- Label and input for month_starting start -->
   <div class="form-group">
     <label for="month_starting">
       Month starting
     </label>
 
-    <!-- Input for month_starting start -->
     <input type="text" id="month_starting" name="month_starting" class="form-control">
-    <!-- Input for month_starting end -->
   </div>
-  <!-- Label and input for month_starting end -->
 
-  <!-- Label and input for monthly_mileage start -->
   <div class="form-group">
     <label for="monthly_mileage">
       Monthly mileage
     </label>
 
-    <!-- Input for monthly_mileage start -->
     <input type="text" id="monthly_mileage" name="monthly_mileage" class="form-control">
-    <!-- Input for monthly_mileage end -->
   </div>
-  <!-- Label and input for monthly_mileage end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create monthly mileage

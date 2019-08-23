@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "run_templates/runs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -94,73 +90,50 @@
 
       <% @runs.each do |run| %>
       <tr>
-        <!-- Display run.id start -->
         <td>
           <%= run.id %>
         </td>
-        <!-- Display run.id end -->
 
-        <!-- Display run.date_of_run start -->
         <td>
           <%= run.date_of_run %>
         </td>
-        <!-- Display run.date_of_run end -->
 
-        <!-- Display run.training_week start -->
         <td>
           <%= run.training_week %>
         </td>
-        <!-- Display run.training_week end -->
 
-        <!-- Display run.miles_planned start -->
         <td>
           <%= run.miles_planned %>
         </td>
-        <!-- Display run.miles_planned end -->
 
-        <!-- Display run.miles_actual start -->
         <td>
           <%= run.miles_actual %>
         </td>
-        <!-- Display run.miles_actual end -->
 
-        <!-- Display run.treadmill_incline start -->
         <td>
           <%= run.treadmill_incline %>
         </td>
-        <!-- Display run.treadmill_incline end -->
 
-        <!-- Display run.run_duration_minutes start -->
         <td>
           <%= run.run_duration_minutes %>
         </td>
-        <!-- Display run.run_duration_minutes end -->
 
-        <!-- Display run.run_duration_seconds start -->
         <td>
           <%= run.run_duration_seconds %>
         </td>
-        <!-- Display run.run_duration_seconds end -->
 
-        <!-- Display run.actual_pace start -->
         <td>
           <%= run.actual_pace %>
         </td>
-        <!-- Display run.actual_pace end -->
 
-        <!-- Display run.location_id start -->
         <td>
           <%= run.location_id %>
         </td>
-        <!-- Display run.location_id end -->
 
-        <!-- Display run.notes start -->
         <td>
           <%= run.notes %>
         </td>
-        <!-- Display run.notes end -->
 
-        <!-- Display run.user_id start -->
         <td>
           <% if run.user.present? %>
             <a href="/users/<%= run.user.id %>">
@@ -168,9 +141,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display run.user_id end -->
 
-        <!-- Display run.shoe_id start -->
         <td>
           <% if run.shoe.present? %>
             <a href="/shoes/<%= run.shoe.id %>">
@@ -178,19 +149,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display run.shoe_id end -->
 
-        <!-- Display run.created_at start -->
         <td>
           <%= time_ago_in_words(run.created_at) %> ago
         </td>
-        <!-- Display run.created_at end -->
 
-        <!-- Display run.updated_at start -->
         <td>
           <%= time_ago_in_words(run.updated_at) %> ago
         </td>
-        <!-- Display run.updated_at end -->
 
         <td>
           <a href="/runs/<%= run.id %>">

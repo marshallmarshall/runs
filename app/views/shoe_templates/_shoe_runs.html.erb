@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @shoe.runs.each do |run| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/runs/<%= run.id %>">
           <%= run.date_of_run %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == run.user %>
           <a href="/delete_run_from_shoe/<%= run.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="shoe_runs_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "shoe_templates/shoe_runs_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link location start -->
       <div class="col">
         <a href="/locations/<%= @location.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit location
         </a>
       </div>
-      <!-- Edit link location end -->
 
-      <!-- Delete link location start -->
       <div class="col">
         <a href="/delete_location/<%= @location.id %>" class="btn btn-block btn-outline-secondary">
           Delete location
         </a>
       </div>
-      <!-- Delete link location end -->
     </div>
 
     <dl>
       <dt>
         Location
       </dt>
-      <!-- Display location start -->
       <dd>
         <%= @location.location %>
       </dd>
-      <!-- Display location end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @location.user.present? %>
           <a href="/users/<%= @location.user_id %>">
@@ -49,28 +42,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@location.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@location.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

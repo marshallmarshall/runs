@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.weekly_mileages.each do |weekly_mileage| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/weekly_mileages/<%= weekly_mileage.id %>">
           <%= weekly_mileage.week_starting %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

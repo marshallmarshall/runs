@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link shoe start -->
       <div class="col">
         <% if current_user == @shoe.user %>
           <a href="/shoes/<%= @shoe.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link shoe end -->
 
-      <!-- Delete link shoe start -->
       <div class="col">
         <% if current_user == @shoe.user %>
           <a href="/delete_shoe/<%= @shoe.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link shoe end -->
     </div>
 
     <dl>
       <dt>
         Shoe name
       </dt>
-      <!-- Display shoe_name start -->
       <dd>
         <%= @shoe.shoe_name %>
       </dd>
-      <!-- Display shoe_name end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @shoe.user.present? %>
           <a href="/users/<%= @shoe.user_id %>">
@@ -53,33 +46,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@shoe.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@shoe.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "shoe_templates/shoe_runs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

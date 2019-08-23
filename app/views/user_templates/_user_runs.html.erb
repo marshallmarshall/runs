@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.runs.each do |run| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/runs/<%= run.id %>">
           <%= run.date_of_run %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

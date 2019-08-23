@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "monthly_mileage_templates/monthly_mileages_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,25 +54,18 @@
 
       <% @monthly_mileages.each do |monthly_mileage| %>
       <tr>
-        <!-- Display monthly_mileage.id start -->
         <td>
           <%= monthly_mileage.id %>
         </td>
-        <!-- Display monthly_mileage.id end -->
 
-        <!-- Display monthly_mileage.month_starting start -->
         <td>
           <%= monthly_mileage.month_starting %>
         </td>
-        <!-- Display monthly_mileage.month_starting end -->
 
-        <!-- Display monthly_mileage.monthly_mileage start -->
         <td>
           <%= monthly_mileage.monthly_mileage %>
         </td>
-        <!-- Display monthly_mileage.monthly_mileage end -->
 
-        <!-- Display monthly_mileage.user_id start -->
         <td>
           <% if monthly_mileage.user.present? %>
             <a href="/users/<%= monthly_mileage.user.id %>">
@@ -84,19 +73,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display monthly_mileage.user_id end -->
 
-        <!-- Display monthly_mileage.created_at start -->
         <td>
           <%= time_ago_in_words(monthly_mileage.created_at) %> ago
         </td>
-        <!-- Display monthly_mileage.created_at end -->
 
-        <!-- Display monthly_mileage.updated_at start -->
         <td>
           <%= time_ago_in_words(monthly_mileage.updated_at) %> ago
         </td>
-        <!-- Display monthly_mileage.updated_at end -->
 
         <td>
           <a href="/monthly_mileages/<%= monthly_mileage.id %>">
