@@ -10,7 +10,8 @@ class ShoesController < ApplicationController
   end
 
   def index
-    @shoes = current_user.shoes.page(params[:page]).per(10)
+    @q = current_user.shoes.ransack(params[:q])
+    @shoes = @q.result(:distinct => true).includes(:user, :runs).page(params[:page]).per(10)
 
     render("shoe_templates/index.html.erb")
   end

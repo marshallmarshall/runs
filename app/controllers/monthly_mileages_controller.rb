@@ -10,7 +10,8 @@ class MonthlyMileagesController < ApplicationController
   end
 
   def index
-    @monthly_mileages = current_user.monthly_mileages.page(params[:page]).per(10)
+    @q = current_user.monthly_mileages.ransack(params[:q])
+    @monthly_mileages = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("monthly_mileage_templates/index.html.erb")
   end

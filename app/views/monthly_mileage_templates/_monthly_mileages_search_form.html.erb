@@ -1,0 +1,111 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "monthly_mileages_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :month_starting, "Month starting" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='month_startinggteqPicker' data-target-input="nearest">
+          <%= f.text_field :month_starting_gteq, :class => "form-control datetimepicker-input", :placeholder => "Month starting greater than or equal to", :data => {:target => '#month_startinggteqPicker'} %>
+          <div class="input-group-append" data-target='#month_startinggteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='month_startinglteqPicker' data-target-input="nearest">
+          <%= f.text_field :month_starting_lteq, :class => "form-control datetimepicker-input", :placeholder => "Month starting less than or equal to", :data => {:target => '#month_startinglteqPicker'} %>
+          <div class="input-group-append" data-target='#month_startinglteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#month_startinggteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#month_startinglteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#month_startinggteqPicker').on("dp.change", function (e) {
+              $('#month_startinglteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#month_startinglteqPicker').on("dp.change", function (e) {
+              $('#month_startinggteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :monthly_mileage, "Monthly mileage" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :monthly_mileage_gteq, :class => "form-control", :placeholder => "Monthly mileage greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :monthly_mileage_lteq, :class => "form-control", :placeholder => "Monthly mileage less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/monthly_mileages" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#monthly_mileages_filters">
+  Show filters
+</a>

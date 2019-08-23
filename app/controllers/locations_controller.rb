@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.page(params[:page]).per(10)
+    @q = Location.ransack(params[:q])
+    @locations = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("location_templates/index.html.erb")
   end

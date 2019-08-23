@@ -10,7 +10,8 @@ class RunsController < ApplicationController
   end
 
   def index
-    @runs = current_user.runs.page(params[:page]).per(10)
+    @q = current_user.runs.ransack(params[:q])
+    @runs = @q.result(:distinct => true).includes(:user, :shoe).page(params[:page]).per(10)
 
     render("run_templates/index.html.erb")
   end

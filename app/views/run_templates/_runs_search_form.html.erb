@@ -1,0 +1,198 @@
+<%= search_form_for @q, :class => collapse_search_form, :id => "runs_filters" do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :date_of_run, "Date of run" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='date_of_rungteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_of_run_gteq, :class => "form-control datetimepicker-input", :placeholder => "Date of run greater than or equal to", :data => {:target => '#date_of_rungteqPicker'} %>
+          <div class="input-group-append" data-target='#date_of_rungteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='date_of_runlteqPicker' data-target-input="nearest">
+          <%= f.text_field :date_of_run_lteq, :class => "form-control datetimepicker-input", :placeholder => "Date of run less than or equal to", :data => {:target => '#date_of_runlteqPicker'} %>
+          <div class="input-group-append" data-target='#date_of_runlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#date_of_rungteqPicker').datetimepicker({
+              format: 'MM/DD/YYYY'
+          });
+          $('#date_of_runlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'MM/DD/YYYY'
+          });
+          $('#date_of_rungteqPicker').on("dp.change", function (e) {
+              $('#date_of_runlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#date_of_runlteqPicker').on("dp.change", function (e) {
+              $('#date_of_rungteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+  <div class="form-group">
+    <%= f.label :notes_cont, "Notes contains" %>
+    <%= f.text_field :notes_cont, :class => "form-control", :placeholder => "Notes contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location_id, "Location" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :location_id_gteq, :class => "form-control", :placeholder => "Location greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :location_id_lteq, :class => "form-control", :placeholder => "Location less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :actual_pace_cont, "Actual pace contains" %>
+    <%= f.text_field :actual_pace_cont, :class => "form-control", :placeholder => "Actual pace contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :run_duration_seconds, "Run duration seconds" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :run_duration_seconds_gteq, :class => "form-control", :placeholder => "Run duration seconds greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :run_duration_seconds_lteq, :class => "form-control", :placeholder => "Run duration seconds less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :run_duration_minutes, "Run duration minutes" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :run_duration_minutes_gteq, :class => "form-control", :placeholder => "Run duration minutes greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :run_duration_minutes_lteq, :class => "form-control", :placeholder => "Run duration minutes less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :treadmill_incline, "Treadmill incline" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :treadmill_incline_gteq, :class => "form-control", :placeholder => "Treadmill incline greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :treadmill_incline_lteq, :class => "form-control", :placeholder => "Treadmill incline less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :miles_actual, "Miles actual" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :miles_actual_gteq, :class => "form-control", :placeholder => "Miles actual greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :miles_actual_lteq, :class => "form-control", :placeholder => "Miles actual less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :miles_planned, "Miles planned" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :miles_planned_gteq, :class => "form-control", :placeholder => "Miles planned greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :miles_planned_lteq, :class => "form-control", :placeholder => "Miles planned less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :training_week, "Training week" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :training_week_gteq, :class => "form-control", :placeholder => "Training week greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :training_week_lteq, :class => "form-control", :placeholder => "Training week less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :created_at, "Created at" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <div class='input-group date' id='created_atgteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "Created at greater than or equal to", :data => {:target => '#created_atgteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atgteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class='input-group date' id='created_atlteqPicker' data-target-input="nearest">
+          <%= f.text_field :created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "Created at less than or equal to", :data => {:target => '#created_atlteqPicker'} %>
+          <div class="input-group-append" data-target='#created_atlteqPicker' data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      $(function () {
+          $('#created_atgteqPicker').datetimepicker({
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atlteqPicker').datetimepicker({
+              useCurrent: false,
+              format: 'YYYY-MM-DD hh:mm:SS'
+          });
+          $('#created_atgteqPicker').on("dp.change", function (e) {
+              $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+          });
+          $('#created_atlteqPicker').on("dp.change", function (e) {
+              $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+          });
+      });
+  </script>
+
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :shoe_shoe_name_cont, "Shoe shoe_name contains" %>
+    <%= f.text_field :shoe_shoe_name_cont, :class => "form-control", :placeholder => "Shoe shoe_name contains" %>
+  </div>
+
+
+  <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+  <a href="/runs" class="btn btn-outline-secondary btn-block mb-1">Clear filters</a>
+
+<% end %>
+
+<a class="btn btn-outline-secondary btn-block mb-1" data-toggle="collapse" href="#runs_filters">
+  Show filters
+</a>
