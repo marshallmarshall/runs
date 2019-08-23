@@ -13,17 +13,21 @@
 
       <!-- Edit link weekly_mileage start -->
       <div class="col">
-        <a href="/weekly_mileages/<%= @weekly_mileage.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit weekly mileage
-        </a>
+        <% if current_user == @weekly_mileage.user %>
+          <a href="/weekly_mileages/<%= @weekly_mileage.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit weekly_mileage
+          </a>
+        <% end %>
       </div>
       <!-- Edit link weekly_mileage end -->
 
       <!-- Delete link weekly_mileage start -->
       <div class="col">
-        <a href="/delete_weekly_mileage/<%= @weekly_mileage.id %>" class="btn btn-block btn-outline-secondary">
-          Delete weekly mileage
-        </a>
+        <% if current_user == @weekly_mileage.user %>
+          <a href="/delete_weekly_mileage/<%= @weekly_mileage.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete weekly_mileage
+          </a>
+        <% end %>
       </div>
       <!-- Delete link weekly_mileage end -->
     </div>
